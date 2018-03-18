@@ -1,8 +1,5 @@
 # Copyright 2016, Dawid Kurek, <dawikur@gmail.com>
 
-# Containers
-snippet stv "vector"
-	std::vector<${1:${VISUAL:type}}>
 # Idioms
 snippet erm "erase"
 	${1:${VISUAL:container}}.erase(std::remove(std::begin($1), std::end($1), ${2:value}), std::end($1));
@@ -39,7 +36,7 @@ snippet ita "iota"
 	std::iota(std::begin(${1:${VISUAL:container}}), std::end($1), ${2:initial_value});
 snippet mov "move"
 	std::move(std::begin(${1:${VISUAL:input}}), std::end($1), std::begin(${2:output}}));
-snippet mpb "move_backward"
+snippet mvb "move_backward"
 	std::move_backward(std::begin(${1:${VISUAL:input}}), std::end($1), std::end(${2:output}));
 snippet rci "replace_copy_if"
 	std::replace_copy_if(std::begin(${1:${VISUAL:input}}), std::end($1),
@@ -278,7 +275,7 @@ snippet erl "equal_range"
 	`algorithm_mnemonics#equalization("bounds")`                    [](${3:auto const lhs}, ${4:auto const rhs}) {
 		${5}
 	});
-snippet inc "includes"
+snippet ics "includes"
 	if (std::includes(std::begin(${1:${VISUAL:container1}}), std::end($1),
 	                  std::begin(${2:container2}), std::end($2))) {
 		${3}
@@ -372,13 +369,9 @@ snippet sth "sort_heap"
 snippet sts "stable_sort"
 	std::stable_sort(std::begin(${1:${VISUAL:container}}), std::end($1));
 # Streams
-snippet oit "copy"
+snippet prc "print container to stdout"
 	std::copy(std::begin(${1:${VISUAL:container}}), std::end($1),
 	          std::ostream_iterator<${2:string}>(std::cout, ${3:"\n"}));
-snippet sti "cin"
-	std::cin >>
-snippet sto "cout"
-	std::cout <<
 # Strings
 snippet ltr "string_trim_left"
 	${1:${VISUAL:string}}.erase(0, $1.find_first_not_of(" \t\n\r"));
